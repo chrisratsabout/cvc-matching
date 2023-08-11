@@ -86,7 +86,7 @@ img {
 
 @media (max-width: 650px){
     img {
-        width: 85px;
+        width: 75px;
     }
 
     .win-modal {
