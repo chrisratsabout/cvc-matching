@@ -70,6 +70,8 @@ let chosenCards = [];
 let cardIds = [];
 const cardsWon = [];
 const score = document.querySelector(".score");
+const winModal = document.querySelector(".win-modal");
+const playAgainBtn = document.querySelector(".play-again");
 
 cardsArray.sort(() => 0.5 - Math.random());
 
@@ -93,7 +95,6 @@ function flipCard() {
     let cardName = this.getAttribute("class");
     chosenCards.push(cardName);
     cardIds.push(cardId);
-    console.log(chosenCards)
     this.setAttribute("src", cardsArray[cardId].img)
     if (chosenCards.length == 2) {
         setTimeout(checkMatch, 500);
@@ -126,8 +127,11 @@ function checkMatch() {
     chosenCards = [];
 
     if (cardsWon.length == cardsArray.length / 2) {
-        alert("You win!!!")
-        location.reload();
+        winModal.classList.add("active");
     }
 }
+
+playAgainBtn.addEventListener("click", function(){
+    location.reload();
+})
 

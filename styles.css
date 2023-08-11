@@ -43,6 +43,41 @@ img {
 
 }
 
+.win-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(74, 74, 74);
+    color: rgb(107, 136, 254);
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    visibility: hidden;
+}
+
+.win-modal.active {
+    visibility: visible;
+}
+
+.play-again {
+    color:  rgb(74, 74, 74);
+    background-color: rgb(256, 229, 0); 
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    display: block;
+    margin: 10px auto;
+}
+
+.play-again:hover {
+    cursor: pointer;
+    filter: brightness(85%);
+    transition: ease-in-out .3s;
+}
+
 @media (max-width: 768px){
     #grid {
         width: 88svw;
@@ -51,6 +86,11 @@ img {
 
 @media (max-width: 650px){
     img {
+        margin-left: 3px;
         width: 85px;
+    }
+
+    .win-modal {
+        width: 66svw;
     }
 }
